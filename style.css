@@ -7,27 +7,42 @@
   --dark-blue: hsl(218, 44%, 22%);
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* I just moved max-width to the main so you can use body element
+for to center your card in the middle */
+
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   font-family: "Outfit", sans-serif;
   display: flex;
   flex-direction: column;
-  max-width: 350px;
-  min-width: 300px;
-  margin: 0 auto;
-  padding: 20% 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
   background-color: var(--light-gray);
 }
 
 main {
+  max-width: 350px;
   padding: 16px;
   background-color: var(--white);
   text-align: center;
-  margin-bottom: 64px;
   border-radius: 16px;
 }
 
 picture img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 8px;
 }
 
@@ -52,10 +67,4 @@ footer {
 
 footer a {
   color: hsl(228, 45%, 44%);
-}
-
-@media screen and (min-width: 376px) {
-  body {
-    padding: 8% 0;
-  }
 }
